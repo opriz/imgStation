@@ -9,6 +9,8 @@ RUN npm run build
 # 生产阶段
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY generate-certs.sh /generate-certs.sh
+RUN chmod +x /generate-certs.sh
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"] 
+CMD ["/bin/bash", "-c", "/generate-certs.sh && nginx -g 'daemon off;'"] 

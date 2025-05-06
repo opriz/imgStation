@@ -15,7 +15,7 @@ import (
 
 const (
 	uploadDir       = "./uploads"
-	imageExpiry     = 4 * time.Hour  // 图片4小时后过期
+	imageExpiry     = 24 * time.Hour  // 图片24小时后过期
 	dirExpiry       = 72 * time.Hour // 目录72小时后过期
 	cleanupInterval = 1 * time.Hour  // 每小时检查一次
 )
