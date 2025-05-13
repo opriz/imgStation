@@ -52,3 +52,4 @@ yarn-error.log*
 *.test
 *.out
 /go.work 
+/backend/backend
